@@ -4,6 +4,8 @@ public class Individual {
 	// chromosome : Nhiem sac the
 	// gene		  : gen tren NST ( chính là 1 thành phố )
 	private int[] chromosome;
+	private int chromosomeLength;
+	private double fitness = -1;
 	// constructor khoi tao Individual
 	public Individual(int[] chromosome) {
 		this.chromosome = chromosome;
@@ -40,7 +42,14 @@ public class Individual {
 		}
 		return output;
 	}
-	
+
+	public double getFitness() {
+		// TODO Auto-generated method stub
+		return this.fitness;
+	}
+	public void setFitness(double fitness) {
+		this.fitness=fitness;
+	}
 	
 	
 }
