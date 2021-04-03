@@ -1,15 +1,18 @@
 
 public class Individual {
-	// Individual la lo trinh di qua tat ca cac thanh pho -- nhiem sac the chua thong tin cac thanh pho di qua-> mang luu thong tin cac thanh pho
+	// Individual la lo trinh di qua tat ca cac thanh pho -- nhiem sac the chua
+	// thong tin cac thanh pho di qua-> mang luu thong tin cac thanh pho
 	// chromosome : Nhiem sac the
-	// gene		  : gen tren NST ( chính là 1 thành phố )
+	// gene : gen tren NST ( chính là 1 thành phố )
 	private int[] chromosome;
 	private int chromosomeLength;
 	private double fitness = -1;
+
 	// constructor khoi tao Individual
 	public Individual(int[] chromosome) {
 		this.chromosome = chromosome;
 	}
+
 	public Individual(int chromosomeLength) {
 		// Create random individual
 		int[] individual;
@@ -21,20 +24,44 @@ public class Individual {
 
 		this.chromosome = individual;
 	}
+
 	// getter and setter
 	public int[] getChromosome() {
 		return chromosome;
 	}
+
 	public void setChromosome(int[] chromosome) {
 		this.chromosome = chromosome;
 	}
+
 	public int getChromosomeLength() {
 		return chromosomeLength;
 	}
+
 	public void setChromosomeLength(int chromosomeLength) {
 		this.chromosomeLength = chromosomeLength;
 	}
-	
+
+	/**
+	 * set gene at offset
+	 * 
+	 * @param gene
+	 * @param offset
+	 */
+	public void setGene(int offset, int gene) {
+		this.chromosome[offset] = gene;
+	}
+
+	/**
+	 * get gene at offset
+	 * 
+	 * @param offset
+	 * @return gene
+	 */
+	public int getGene(int offset) {
+		return this.chromosome[offset];
+	}
+
 	public String toString() {
 		String output = "";
 		for (int gene = 0; gene < this.chromosome.length; gene++) {
@@ -47,9 +74,9 @@ public class Individual {
 		// TODO Auto-generated method stub
 		return this.fitness;
 	}
+
 	public void setFitness(double fitness) {
-		this.fitness=fitness;
+		this.fitness = fitness;
 	}
-	
-	
+
 }
